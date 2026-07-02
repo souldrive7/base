@@ -97,6 +97,20 @@ python -c "import lightgbm, xgboost, catboost; print('OK')"
 
 ---
 
+## Step 8: 6月15日基準への差分復元（クラウド記録より）
+
+`restore-phase2-20260615.ps1` を管理者PowerShellで実行（ドライバ更新・アプリ最新化・Steam/Zoom/Discord・キーボード設定）。その後、以下を確認：
+
+| 項目 | 記録 | 復元アクション |
+|---|---|---|
+| 大学 AI-Stack（GPU基盤） | 6/15 に NV_H100 / NV_Pro6000 プロジェクト稼働（通知: takayana@ism.ac.jp） | ポータルへのログインと接続手順を確認。SSH鍵を使っていた場合は再発行・再登録が必要 |
+| Kaggle: NVIDIA Nemotron コンペ | 6/15 締切で参加 | 成果物・ノートブックは Kaggle クラウド側に残存。ローカルに要るものだけダウンロード |
+| Anthropic 追加課金 | 6/8・6/9・6/12 に領収書（Pro月額とは別） | API キー/Claude Code を使っていた場合、キーは復元不可のため console.anthropic.com で再発行 |
+| Steam | 6/13 アカウント新規作成 | Steam ログイン（メール認証） |
+| Zoom | 利用形跡 | ログインのみ |
+| iCloud+ 200GB | 契約中（iPhone） | 写真連携が必要なら iCloud for Windows を追加 |
+| BIOS 更新 | ― | Dell Command Update から手動で個別適用（自動適用からは除外済み） |
+
 ## セットアップ記録（完了したら日付を記入）
 
 | ステップ | 完了日 | メモ |
