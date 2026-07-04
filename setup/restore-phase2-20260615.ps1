@@ -35,7 +35,7 @@ if ($manufacturer -match "Dell") {
     if ($dcu) {
         Write-Host "ドライバをスキャンし、BIOS/ファームウェアを除いて適用します..." -ForegroundColor Cyan
         & $dcu /scan
-        & $dcu /applyUpdates -updateType=driver,application -reboot=disable
+        & $dcu /applyUpdates "-updateType=driver,application" "-reboot=disable"
         Write-Host "完了。BIOS 更新は手動で（本ファイル末尾の手順）実施してください。" -ForegroundColor Yellow
     } else {
         Write-Host "dcu-cli.exe が見つかりません。Dell Command Update をGUIで一度起動してから再実行してください。" -ForegroundColor Red
