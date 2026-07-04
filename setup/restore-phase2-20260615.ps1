@@ -26,7 +26,7 @@ function Install-App {
 Write-Host "`n########## 1. ドライバ更新 ##########" -ForegroundColor Magenta
 $manufacturer = (Get-CimInstance Win32_ComputerSystem).Manufacturer
 Write-Host "検出されたメーカー: $manufacturer"
-if ($manufacturer -match "Dell") {
+if ($manufacturer -match "Dell|Alienware") {
     Install-App -Id "Dell.CommandUpdate" -Name "Dell Command | Update"
     $dcu = @(
         "$env:ProgramFiles\Dell\CommandUpdate\dcu-cli.exe",
