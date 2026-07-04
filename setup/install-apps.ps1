@@ -8,10 +8,15 @@
 
 $ErrorActionPreference = "Continue"
 
+# 初回起動時、msstore ソースの利用規約同意プロンプトが `winget list` 内部で
+# 無言のまま待ち受けることがあるため、ここで先に同意を済ませておく
+Write-Host "winget のソース利用規約に同意します（初回のみ表示）..." -ForegroundColor DarkGray
+winget list --accept-source-agreements | Out-Null
+
 function Install-App {
     param([string]$Id, [string]$Name)
     Write-Host "`n=== $Name ($Id) ===" -ForegroundColor Cyan
-    winget list --id $Id -e | Out-Null
+    winget list --id $Id -e --accept-source-agreements | Out-Null
     if ($LASTEXITCODE -eq 0) {
         Write-Host "既にインストール済み。スキップします。" -ForegroundColor Yellow
         return

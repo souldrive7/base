@@ -14,7 +14,7 @@ $ErrorActionPreference = "Continue"
 function Install-App {
     param([string]$Id, [string]$Name)
     Write-Host "`n=== $Name ($Id) ===" -ForegroundColor Cyan
-    winget list --id $Id -e | Out-Null
+    winget list --id $Id -e --accept-source-agreements | Out-Null
     if ($LASTEXITCODE -eq 0) { Write-Host "既にインストール済み。スキップ。" -ForegroundColor Yellow; return }
     winget install --id $Id -e --accept-package-agreements --accept-source-agreements
 }
